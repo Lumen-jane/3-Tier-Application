@@ -20,6 +20,9 @@ services:
       - "3000:3000"
     volumes:
       - grafana-data:/var/lib/grafana
+    environment:
+      - GF_SERVER_ROOT_URL=http://chizzy.site/grafana
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
     networks:
       - monitoring-network
     restart: unless-stopped
